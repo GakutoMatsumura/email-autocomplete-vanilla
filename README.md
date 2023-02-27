@@ -87,7 +87,7 @@ These are the plugin default domains if the domains option is not supplied.
 * Gakuto Matsumura
 
 ### Origin
-* Low Yong Zhen
+* Low Yong Zhen : [link](https://github.com/yongzhenlow/email-autocomplete)
 
  thank you.
 
