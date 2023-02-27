@@ -31,8 +31,7 @@ Download or clone this repo and copy dist/email-autocomplete-vanilla.min.js into
 document.addEventListener("DOMContentLoaded", function(e) {
 	emailautocomplete("#target_input_id", {
 		domains: ["gmail.com","icloud.com"],
-		suggClass: "custom-classname",
-		suggBkColor: "inherit"
+		suggClass: "custom-classname"
 	});
 });
 </script>
@@ -50,11 +49,18 @@ document.addEventListener("DOMContentLoaded", function(e) {
 Use the following CSS to style the suggestion text color. Remember to update the classname if you've changed it to a custom one.
 
 ```css
+/*Default*/
 .eac-sugg {
 	color: #ccc;
 }
 ```
 
+```css
+/*Sample*/
+.custom-classname {
+	color: #ccc;
+}
+```
 
 ## domains
 These are the plugin default domains if the domains option is not supplied.
@@ -82,12 +88,16 @@ These are the plugin default domains if the domains option is not supplied.
 * ymobile.ne.jp
 
 
+## Demonstration
+[demo/demo.html link](./demo/demo.html)
+
+
 ## Author
-### Remake via Vanilla JS base
+### Remake via Vanilla JS edition
 * Gakuto Matsumura
 
 ### Origin
-* Low Yong Zhen : [link](https://github.com/yongzhenlow/email-autocomplete)
+* Low Yong Zhen : [repository link](https://github.com/yongzhenlow/email-autocomplete)
 
  thank you.
 

@@ -1,4 +1,4 @@
-/*! email-autocomplete-vanilla 0.1.3.1
+/*! email-autocomplete-vanilla 0.1.3.2
  * MIT License
  * (c) 2023 Gakuto Matsumura (http://github.com/GakutoMatsumura)
  * (c) 2014 Low Yong Zhen <yz@stargate.io>
@@ -78,7 +78,8 @@
 				suggest_overlay_style.lineHeight = field_style.lineHeight;
 
 				// paddingTop to marginTop
-				suggest_overlay_style.marginTop = parseFloat(field_style.paddingTop) + ((parseFloat(field_obj.offsetHeight) - parseFloat(field_obj.clientHeight)) / 2) + 'px';
+				suggest_overlay_style.marginTop = parseFloat(field_style.marginTop) + parseFloat(field_style.paddingTop) + ((parseFloat(field_obj.offsetHeight) - parseFloat(field_obj.clientHeight)) / 2) + 'px';
+				suggest_overlay_style.marginLeft = field_style.marginLeft;
 				suggest_overlay_style.marginBottom = suggest_overlay_style.marginTop;
 				suggest_overlay_style.fontFamily = field_style.fontFamily;
 				suggest_overlay_style.fontWeight = field_style.fontWeight;
