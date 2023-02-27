@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="content-language" content="en">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
+<title>Demo(CDN) : email-autocomplete-vanilla.js</title>
+<script src="//cdn.jsdelivr.net/gh/GakutoMatsumura/email-autocomplete-vanilla@main/dist/email-autocomplete-vanilla.min.js"></script>
+<style>
+input {
+	margin: 10px;
+	padding: 10px;
+	font-size: 20px;
+}
+.custom-classname {
+	background-color: rgba(128,128,128,0.175);
+	color: rgba(128,128,128,0.85);
+}
+</style>
+</head>
+<h1>Demo(CDN) : email-autocomplete-vanilla.js</h1>
+<input id="target_input_id" name="email" type="email" size="80"><br>
+<script>
+document.addEventListener("DOMContentLoaded", function(e) {
+	emailautocomplete("#target_input_id", {
+		domains: ["gmail.com","icloud.com"],
+		suggClass: "custom-classname"
+	});
+});
+</script>
+</body>
+</html>
