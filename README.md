@@ -86,7 +86,7 @@ These are the plugin default domains if the domains option is not supplied.
 
 ## Author
 ----
-### Remake
+### Remake via Vanilla JS base
 * Gakuto Matsumura
 
 ### Origin
