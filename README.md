@@ -89,7 +89,7 @@ These are the plugin default domains if the domains option is not supplied.
 
 
 ## Demonstration
-[demo/demo.html link](./demo/demo.html)
+[demo.html link (en.thilmera.com)](https://en.thilmera.com/project/t7GithubJS/repo/email-autocomplete-vanilla/demo/demo.html)
 
 
 ## Author
