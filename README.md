@@ -4,23 +4,20 @@
 ----
 email-autocomplete, Vanilla JS full-remake.
 
+
 ## What is this?
-----
 This javascript is a full-remake of [Low Yong Zhen's](https://github.com/yongzhenlow/email-autocomplete) 1.3.0 contents into Vanilla JS (pure javascript) that does not depend on jQuery.
 
 
 ## What does it do?
-----
 If the user types "user@gm", the script suggests: "user@gmail.com", based on the first result from the list of predefined email domains.
 
-----
 
 ### Download
 Download or clone this repo and copy dist/email-autocomplete-vanilla.min.js into your javascripts directory.
 
 
 ## Usage
-----
 ```javascript
 <script src="email-autocomplete-vanilla.min.js"></script>
 ```
@@ -41,15 +38,15 @@ document.addEventListener("DOMContentLoaded", function(e) {
 </script>
 ```
 
+
 ## Settings
-----
 | Option | Type | Default | Description |
 | --- | --- | --- | --- |
 | suggClass | string | 'eac-sugg' | Classname for the suggestion text element. |
 | domains | array | See list of domains below | Array of domains used for autocompleting. |
 
+
 ## Styling
-----
 Use the following CSS to style the suggestion text color. Remember to update the classname if you've changed it to a custom one.
 
 ```css
@@ -58,8 +55,8 @@ Use the following CSS to style the suggestion text color. Remember to update the
 }
 ```
 
+
 ## domains
-----
 These are the plugin default domains if the domains option is not supplied.
 
 * yahoo.co.jp
@@ -84,8 +81,8 @@ These are the plugin default domains if the domains option is not supplied.
 * ybb.ne.jp
 * ymobile.ne.jp
 
+
 ## Author
-----
 ### Remake via Vanilla JS base
 * Gakuto Matsumura
 
@@ -96,6 +93,5 @@ These are the plugin default domains if the domains option is not supplied.
 
 
 ## LICENSE
-----
 MIT License
 
