@@ -1,4 +1,4 @@
-/*! email-autocomplete-vanilla 0.1.3.3
+/*! email-autocomplete-vanilla 0.1.3.4
  * MIT License
  * (c) 2023 Gakuto Matsumura (http://github.com/GakutoMatsumura)
  * Based on the email-autocomplete(0.1.3) library created by:
@@ -34,7 +34,7 @@
 
 				var field_obj = this._f;
 				const field_style = getComputedStyle(field_obj || {});
-				if (!Object.keys(field_style).length || !field_obj.parentNode) {
+				if (!field_style || !field_obj.parentNode) {
 					console.error('eac,init:Object null');
 					return;
 				}
@@ -103,7 +103,7 @@
 				return "";
 			}
 
-			var str_arr = str.split("@");
+			const str_arr = str.split("@");
 			if (str_arr.length > 1) {
 				str = str_arr.pop();
 				if (!str.length) {
@@ -114,17 +114,14 @@
 				return "";
 			}
 
-			var match = this._d.filter(function (domain) {
+			const match = this._d.filter(function (domain) {
 				return domain.indexOf(str) === 0;
 			}).shift() || "";
 
 			return match ? match.replace(str, "") : "";
 		},
-
 		autocomplete: function () {
-			if (!this._s || this._s.length < 1 || !this._v) {
-				return false;
-			}
+			if (!this._s || this._s.length < 1 || !this._v) return false;
 			if (this._f) this._f.value = this._v + this._s;
 			if (this._so) this._so.textContent = "";
 			if (this._cv) this._cv.textContent = "";
@@ -135,30 +132,22 @@
 		 * Displays the suggestion, handler for field keyup event
 		 */
 		displaySuggestion: function (e) {
-			this._v = (this._f ? this._f.value : '');
+			this._v = ( this._f && this._f.value ) || '';
 			this._s = this.suggest(this._v);
-
-			if (!this._s.length) {
-				this._so.textContent = "";
-			} else {
-				e.preventDefault();
-			}
-
-			//update with new suggestion
-			if (this._so) this._so.textContent = this._s;
+			
+			if (this._so) this._so.textContent = this._s || '';
+			if (this._s) e.preventDefault();
+			
 			if (this._cv) this._cv.textContent = this._v;
-
-			// get input padding, border and margin to offset text
+			
 			if (this._flo === null) {
-				const style = (this._f && getComputedStyle(this._f)) || {};
-				this._flo = (parseFloat(style.paddingLeft) + parseFloat(style.borderLeftWidth)) || 0;
+				const style = getComputedStyle(this._f || {});
+				this._flo = style ? (parseFloat(style.paddingLeft) + parseFloat(style.borderLeftWidth)) || 0 : 0;
 			}
-
+			
 			//left position suggestion text
-			var left = parseFloat(this._flo) + parseFloat(this._cv && this._cv.getBoundingClientRect ? this._cv.getBoundingClientRect().width : 0);
-			if (!isNaN(left)) {
-				this._so.style.left = left + "px";
-			}
+			const left = parseFloat(this._flo) + ((this._cv && this._cv.getBoundingClientRect && this._cv.getBoundingClientRect().width) || 0);
+			this._so.style.left = isNaN(left) ? "" : left + "px";
 		},
 
 		/**
@@ -197,14 +186,12 @@
 	};
 
 	window.emailautocomplete = function (selector, options) {
-		var elems = document.querySelectorAll(selector);
+		var elems = Array.from(document.querySelectorAll(selector)) || [];
 		var instances = [];
-		if (elems) {
-			for (var i = 0; i < elems.length; ++i) {
-				if (!elems[i].dataset.eac) {
-					instances.push(new EmailAutocompleteVanilla(elems[i], options));
-					elems[i].dataset.eac = true;
-				}
+		for (var i = 0; i < elems.length; ++i) {
+			if (!elems[i].dataset.eac) {
+				instances.push(new EmailAutocompleteVanilla(elems[i], options));
+				elems[i].dataset.eac = true;
 			}
 		}
 		return instances;
