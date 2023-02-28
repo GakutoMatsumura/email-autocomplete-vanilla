@@ -65,27 +65,47 @@ Use the following CSS to style the suggestion text color. Remember to update the
 ## domains
 These are the plugin default domains if the domains option is not supplied.
 
-* yahoo.co.jp
 * gmail.com
+* icloud.com
+* outlook.com
+* yahoo.com
+* hotmail.com
+* aol.com
+* live.com
+* msn.com
+* protonmail.com
+* me.com
+* mac.com
+* googlemail.com
+* facebook.com
+* gmx.com
+* zoho.com
+
+remove from v0.1.3.1-v0.1.3.2
+* yahoo.co.jp
 * ezweb.ne.jp
 * au.com
 * docomo.ne.jp
 * i.softbank.jp
 * softbank.ne.jp
 * excite.co.jp
-* googlemail.com
 * hotmail.co.jp
 * hotmail.com
-* icloud.com
 * live.jp
-* me.com
 * mineo.jp
 * nifty.com
-* outlook.com
 * outlook.jp
 * yahoo.ne.jp
 * ybb.ne.jp
 * ymobile.ne.jp
+
+remove from origin
+* comcast.net
+* hotmail.co.uk
+* yahoo.co.uk
+* verizon.net
+* sbcglobal.net
+* att.net
 
 
 ## Demonstration
