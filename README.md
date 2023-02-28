@@ -2,11 +2,11 @@
  Vanilla JS version of email-autocomplete that suggests and autocompletes domains as the user types in the email address field.
 
 ----
-email-autocomplete, Vanilla JS full-remake.
+ Vanilla JS full-remake "jquery.email-autocomplete.js".
 
 
 ## What is this?
-This javascript is a full-remake of [Low Yong Zhen's](https://github.com/yongzhenlow/email-autocomplete) 1.3.0 contents into Vanilla JS (pure javascript) that does not depend on jQuery.
+This javascript is a full-remake of [Low Yong Zhen](https://github.com/yongzhenlow/email-autocomplete)'s email-autocomplete 1.3.0 contents into Vanilla JS (pure javascript) that does not depend on jQuery.
 
 
 ## What does it do?
@@ -18,8 +18,13 @@ Download or clone this repo and copy dist/email-autocomplete-vanilla.min.js into
 
 
 ## Usage
+* local
 ```javascript
 <script src="email-autocomplete-vanilla.min.js"></script>
+```
+* CDN
+```javascript
+<script src="//cdn.jsdelivr.net/gh/GakutoMatsumura/email-autocomplete-vanilla@main/dist/email-autocomplete-vanilla.min.js"></script>
 ```
 
 ```html
@@ -109,15 +114,19 @@ remove from origin
 
 
 ## Demonstration
-[demo.html link (en.thilmera.com)](https://en.thilmera.com/project/t7GithubJS/repo/email-autocomplete-vanilla/demo/demo.cdn.html)
+[demo.html sample page (en.thilmera.com)](https://en.thilmera.com/project/t7GithubJS/repo/email-autocomplete-vanilla/demo/demo.cdn.html)
+[demo.html source](./demo/demo.html)
+[demo.cdn.html source](./demo/demo.cdn.html)
 
 
 ## Author
 ### Remake via Vanilla JS edition
 * Gakuto Matsumura
+[project site : t7GithubJS (en.thilmera.com)](https://en.thilmera.com/project/t7GithubJS/)
 
 ### Origin
-* Low Yong Zhen : [repository link](https://github.com/yongzhenlow/email-autocomplete)
+* Low Yong Zhen
+[origin repository link](https://github.com/yongzhenlow/email-autocomplete)
 
  thank you.
 
