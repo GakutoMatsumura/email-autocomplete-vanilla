@@ -1,6 +1,7 @@
-/*! email-autocomplete-vanilla 0.1.3.2
+/*! email-autocomplete-vanilla 0.1.3.3
  * MIT License
  * (c) 2023 Gakuto Matsumura (http://github.com/GakutoMatsumura)
+ * Based on the email-autocomplete(0.1.3) library created by:
  * (c) 2014 Low Yong Zhen <yz@stargate.io>
 */
 "use strict";
@@ -8,13 +9,13 @@
 (function (window, document) {
 	function EmailAutocompleteVanilla(obj, options) {
 		if (!obj) {
-			console.error("autoemail,const:C00");
+			console.error("eac,const:C00");
 			return;
 		}
 		var defaults = {
 			suggClass: "eac-sugg",
-			// domains japan region
-			domains: ['yahoo.co.jp', 'gmail.com', 'ezweb.ne.jp', 'au.com', 'docomo.ne.jp', 'i.softbank.jp', 'softbank.ne.jp', 'excite.co.jp', 'googlemail.com', 'hotmail.co.jp', 'hotmail.com', 'icloud.com', 'live.jp', 'me.com', 'mineo.jp', 'nifty.com', 'outlook.com', 'outlook.jp', 'yahoo.ne.jp', 'ybb.ne.jp', 'ymobile.ne.jp']
+			// renew. Mail client domains of world share 0.1.3.3
+			domains: ["gmail.com","icloud.com","outlook.com","yahoo.com","hotmail.com","aol.com","live.com","msn.com","protonmail.com","me.com","mac.com","googlemail.com","facebook.com","gmx.com","zoho.com"]
 		};
 		this._f = obj;
 		this._o = Object.assign({}, defaults, options);
@@ -32,13 +33,9 @@
 				this._flo = null;
 
 				var field_obj = this._f;
-				const field_style = (field_obj ? getComputedStyle(field_obj) : {}) || {};
-				if (Object.keys(field_style).length === 0) {
-					console.error('autoemail,init:C01');
-					return;
-				}
-				if (!field_obj.parentNode) {
-					console.error('autoemail,init:C02');
+				const field_style = getComputedStyle(field_obj || {});
+				if (!Object.keys(field_style).length || !field_obj.parentNode) {
+					console.error('eac,init:Object null');
 					return;
 				}
 
@@ -98,7 +95,7 @@
 				suggest_overlay_obj.addEventListener("mousedown", this.autocomplete.bind(this));
 				suggest_overlay_obj.addEventListener("touchstart", this.autocomplete.bind(this));
 			} catch (e) {
-				console.error('autoemail,init:', e);
+				console.error('eac,init:', e);
 			}
 		},
 		suggest: function (str) {
@@ -204,9 +201,9 @@
 		var instances = [];
 		if (elems) {
 			for (var i = 0; i < elems.length; ++i) {
-				if (!elems[i].set_emailautocomplete) {
+				if (!elems[i].dataset.eac) {
 					instances.push(new EmailAutocompleteVanilla(elems[i], options));
-					elems[i].set_emailautocomplete = true;
+					elems[i].dataset.eac = true;
 				}
 			}
 		}
