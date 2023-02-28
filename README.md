@@ -115,17 +115,21 @@ remove from origin
 
 ## Demonstration
 [demo.html sample page (en.thilmera.com)](https://en.thilmera.com/project/t7GithubJS/repo/email-autocomplete-vanilla/demo/demo.cdn.html)
+
 [demo.html source](./demo/demo.html)
+
 [demo.cdn.html source](./demo/demo.cdn.html)
 
 
 ## Author
 ### Remake via Vanilla JS edition
 * Gakuto Matsumura
+
 [project site : t7GithubJS (en.thilmera.com)](https://en.thilmera.com/project/t7GithubJS/)
 
 ### Origin
 * Low Yong Zhen
+
 [origin repository link](https://github.com/yongzhenlow/email-autocomplete)
 
  thank you.
